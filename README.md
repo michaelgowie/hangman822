@@ -3,3 +3,6 @@ Hangman is a classic game in which a player thinks of a word and the other playe
 
 This is an implementation of the Hangman game, where the computer thinks of a word and the user tries to guess it. 
 ---
+milestone_2 contains the function which generates a _random_ word
+---
+milestone_3 contains the functions which obtain a guessed letter from the user and check whether it is contained in the guess

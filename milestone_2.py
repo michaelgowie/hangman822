@@ -1,10 +1,10 @@
 import random as ran
+def choose_random_word():
+    possible_word_list = ['Banana', 'Kiwi', 'Raspberry', 'Avocado', 'Nectarine', 'Apple', 'Peach', 'Mango', 'Strawberry']
 
-word_list = ['Banana', 'Kiwi', 'Raspberry', 'Avocado', 'Nectarine', 'Apple', 'Peach', 'Mango', 'Strawberry']
+    word_to_guess = ran.choice(possible_word_list)
+    return word_to_guess
 
-word = ran.choice(word_list)
 
-guess = input('Guess a letter.')
 
-if len(guess) != 1 or guess.isalpha() == False:
-    print('Please input exactly one letter') 
+
