@@ -8,3 +8,22 @@ def choose_random_word():
 
 
 
+stringdr = 'iqfoijqwcksdkajslkqeckelialkaej'
+
+letter = 'q'
+curr_idx = -1
+list_of_ids = []
+x = 0
+while x < 10:
+    if letter in stringdr[curr_idx + 1:]:
+        print(stringdr.find(letter, curr_idx + 1))
+        print(stringdr[curr_idx + 1:])
+        curr_idx = stringdr.find(letter, curr_idx + 1)
+        list_of_ids.append(curr_idx)
+        
+        
+        x += 1
+    else: 
+        break
+for idx in list_of_ids:
+    print(stringdr[idx])
