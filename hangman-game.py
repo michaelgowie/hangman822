@@ -37,9 +37,9 @@ class Hangman:
             letter.lower()
         if letter in self.word:
             print(f'Good guess, {letter} is in the word.')
-            letter_idx_list = self.get_letter_indices(letter)
-            for idx in letter_idx_list:
-                self.word_guessed[idx] = letter
+            for i in range(len(self.word_guessed)):
+                if self.word[i] == letter:
+                    self.word_guessed[i] = letter
             self.num_letters -= 1
         else:
             print(f'Unlucky, {letter} is not in the word')
@@ -63,26 +63,14 @@ class Hangman:
                 break
         self.list_of_guesses.append(user_guessed_letter)
         return user_guessed_letter
-    def get_letter_indices(self, letter):
-        '''
-        This method obtains a list of indices which a certain letter appears in the word to be guessed. It is used in the check_guess method. 
-        '''
-        current_idx = 0
-        list_of_indices = []
-        while True:
-            if letter in self.word[current_idx:]:
-                list_of_indices.append(self.word.find(letter, current_idx))
-                current_idx = self.word.find(letter, current_idx) + 1
-            else:
-                break
-        return list_of_indices
+    
 
 
 def play_game(list_of_words):
     game = Hangman(list_of_words)
     while True:
         if game.num_lives == 0:
-            print(f'You are out of lives ya blody idiot! The word was {game.word}. blody heal')
+            print(f'You are out of lives! The word was {game.word}.')
             break
         if game.num_letters == 0:
             life_plural = 'life'
