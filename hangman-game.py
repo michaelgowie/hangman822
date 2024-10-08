@@ -49,7 +49,7 @@ class Hangman:
         '''
         This method obtains a letter from the user to guess.
 
-        The method will only accept a single chracter which is in th ealphabet and has not been guessed previously. If these aren't met, the method will ask the user for a different input.
+        The method will only accept a single chracter which is in the ealphabet and has not been guessed previously. If these aren't met, the method will ask the user for a different input.
         '''
         while True:
             user_guessed_letter = input('Guess a letter.')
@@ -67,6 +67,9 @@ class Hangman:
 
 
 def play_game(list_of_words):
+    '''
+    play_game takes as argument a list of words and then uses the Hangman class to play a game of hangman with a random word from the list.
+    '''
     game = Hangman(list_of_words)
     while True:
         if game.num_lives == 0:
